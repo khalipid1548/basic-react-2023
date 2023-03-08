@@ -1,16 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import {Route, Link} from 'react-router-dom';
+import Todos from './features/todos';
+import Albums from './features/albums';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>kha</p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          ok
-        </a>
-      </header>
+      home page <br />
+      <Link to="/todos">todos</Link> <br />
+      <Link to="/albums">albums</Link>
+      <Route path="/todos" component={Todos} />
+      <Route path="/albums" component={Albums} />
     </div>
   );
 }
